@@ -1,3 +1,5 @@
-from math import exp
-for x in range(0,20):
-    print(exp(1.2)+3+34.5,";",x+1)
+from math import e
+x = 1.2*e+3+34.5
+y=str(x)
+y = y+" "
+print(y*20)

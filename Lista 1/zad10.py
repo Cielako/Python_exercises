@@ -1,3 +1,12 @@
+
+
+
+
+
+
+
+
+
 import cmath
 z= 1j
 sinus = cmath.sin(z)
