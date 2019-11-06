@@ -1,7 +1,7 @@
-liczba = int(input("Podaj liczbę do wypisania szeregu harmonicznego: "))
+liczba = int(input("Podaj liczbę(n) do wypisania sumy szeregu harmonicznego dla n początkowych liczb: "))
 
 def szereg_harmoniczny(liczba):
-    szereg=0
+    szereg = 0
     if liczba < 2:
         print("Szereg harmoniczny: ",liczba)
     else:

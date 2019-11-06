@@ -13,6 +13,3 @@ if opcja == 1:
 if opcja == 2:
     radiany = float(input("Podaj wartość w radianach: "))
     stopnie(radiany)
-
-else:
-    print("nieprawidłowa opcja zamykam program !!!!")

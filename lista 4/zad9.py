@@ -1,6 +1,6 @@
-n=int(input("Podaj liczbę całkowitą (dodatnią), dla której mam policzyć silnię: "))#pobieram liczbę dla której mam wypisać silnię
+n=int(input("Podaj liczbę całkowitą (dodatnią), dla której mam policzyć silnię: "))
 def program_silnia(n):
-    liczba = n+1#zwiększam o 1 dla pętli z range
+    liczba = n+1
     if n == 1:
         print("Silnia z Twojej liczby to: ",n)
     elif n < 1:
