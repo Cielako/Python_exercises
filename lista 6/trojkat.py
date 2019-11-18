@@ -1,33 +1,42 @@
 from zad1 import boki
 
-def obwod():
+def obwod(obwod):
     obwod = float(boki[0] + boki[1] + boki[2])
-    print("Obwod tego trojkata wynosi:",obwod)
+    return obwod
 
-def pole():
+def pole(pole):
     from math import sqrt
     polowa_obwodu = (boki[0] + boki[1] + boki[2])/2
     pole = float(sqrt(polowa_obwodu*(polowa_obwodu-boki[0])*(polowa_obwodu-boki[1])*(polowa_obwodu-boki[2])))
-    print("Pole tego trojkata wynosi:",pole)
+    return pole
 
-def rrr():#funkcja odpowiada za sprawdzenie czy trójkąt jest równoboczny, równoramienny czy równoboczny
+def rrr(rrr):#funkcja odpowiada za sprawdzenie czy trójkąt jest równoboczny, równoramienny czy równoboczny
     if boki[0] == boki[1] and boki[0] == boki[2] and boki[1] == boki[2]:
-       print("Ten trójkąt jest równoboczny !!")
+       rrr = "równoboczny !!"
+       return rrr
     
     elif boki[0] == boki[1] or boki[0] == boki[2] or boki[1] == boki[2]:
-       print("Ten trójkąt jest równoramienny !!")
+        rrr = "równoramienny !!"
+        return rrr
     
     else:
-       print("Ten trójkąt jest różnoramienny !!") 
+      rrr = "różnoramienny !!"
+      return rrr 
        
-def por():#funkcja pozwala sprawdzić czy trójkąt jest prostokątny, ostrokątny czy rozwartokątny
+def por(por):#funkcja pozwala sprawdzić czy trójkąt jest prostokątny, ostrokątny czy rozwartokątny
     if boki[0]**2+boki[1]**2 == boki[2]**2 or boki[2]**2-boki[0]**2 == boki[1]**2 or boki[2]**2-boki[1]**2 == boki[0]**2:
-        print("Ten trójkąt jest prostokątny !!") 
+        por = "prostokątny !!" 
+        return por
+    
     elif  boki[2]**2 >= boki[0]**2 + boki[1]**2 or boki[2]**2 - boki[1]**2 >= boki[0]**2 or boki[2]**2 - boki[0]**2 >= boki[1]**2:
-        print("Ten Trójkąt jest ostrokątny !!")
+        por = "ostrokątny !!"
+        return por
+    
     elif  boki[2]**2 <= boki[0]**2 + boki[1]**2 or boki[2]**2 - boki[1]**2 <= boki[0]**2 or boki[2]**2 - boki[0]**2 <= boki[1]**2:
-        print("Ten Trójkąt jest rozwartokątny !!")
-obwod()
-pole()
-rrr()
-por()
+        por = "rozwartokątny !!"
+        return por
+    
+print("Obwód tego trójkąta wynosi:",obwod(obwod))
+print("Pole tego trojkata wynosi:",pole(pole))
+print("Ten trójkąt jest " + rrr(rrr))
+print("Ten trójkąt jest " + por(por))
