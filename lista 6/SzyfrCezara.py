@@ -1,11 +1,30 @@
 def szyfruj(zdanie,slownik):
+    szyfr = ""
     for i in zdanie:
-        for a in slownik:
+        a = ord(i)
+        if a in slownik:#jeżeli a(numer ascii jest w słowniku), to zamień i na wartość w kodzie ascii o jeden większą
             if i == "z":
-                a = slownik[0]
-                zdanie = zdanie.replace(i,chr(a))
-            elif i == chr(a):
-                zdanie = zdanie.replace(i,chr(a+1))
-            
-    return zdanie
+                i = chr(97)
+                szyfr += i
+            if i == chr(a):
+                i = chr(a+1)
+                szyfr+=i
+        else: szyfr+=i
+    return szyfr
+
+def deszyfruj(szyfr,slownik):
+    deszyfr=""
+    for i in szyfr:
+        a = ord(i)
+        if a in slownik:#jeżeli a(numer ascii jest w słowniku), to zamień i na wartość w kodzie ascii o jeden mniejszą
+            if i == "z":
+                i = chr(122)
+                deszyfr += i
+            if i == chr(a):
+                i = chr(a-1)
+                deszyfr+=i
+        else: deszyfr+=i
+    return deszyfr
+
+   
                 
