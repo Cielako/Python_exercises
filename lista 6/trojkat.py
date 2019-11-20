@@ -1,21 +1,19 @@
-from zad1 import boki
-
-def obwod(obwod):
-    obwod = float(boki[0] + boki[1] + boki[2])
+def obwod(a,b,c):
+    obwod = float(a + b + c)
     return obwod
 
-def pole(pole):
+def pole(a,b,c):
     from math import sqrt
-    polowa_obwodu = (boki[0] + boki[1] + boki[2])/2
-    pole = float(sqrt(polowa_obwodu*(polowa_obwodu-boki[0])*(polowa_obwodu-boki[1])*(polowa_obwodu-boki[2])))
+    polowa_obwodu = (a + b + c)/2
+    pole = float(sqrt(polowa_obwodu*(polowa_obwodu-a)*(polowa_obwodu-b)*(polowa_obwodu-c)))
     return pole
 
-def rrr(rrr):#funkcja odpowiada za sprawdzenie czy trójkąt jest równoboczny, równoramienny czy równoboczny
-    if boki[0] == boki[1] and boki[0] == boki[2] and boki[1] == boki[2]:
+def rrr(a,b,c):#funkcja odpowiada za sprawdzenie czy trójkąt jest równoboczny, równoramienny czy równoboczny
+    if a == b and a == c and b == c:
        rrr = "równoboczny !!"
        return rrr
     
-    elif boki[0] == boki[1] or boki[0] == boki[2] or boki[1] == boki[2]:
+    elif a == b or a == c or b == c:
         rrr = "równoramienny !!"
         return rrr
     
@@ -23,20 +21,16 @@ def rrr(rrr):#funkcja odpowiada za sprawdzenie czy trójkąt jest równoboczny, 
       rrr = "różnoramienny !!"
       return rrr 
        
-def por(por):#funkcja pozwala sprawdzić czy trójkąt jest prostokątny, ostrokątny czy rozwartokątny
-    if boki[0]**2+boki[1]**2 == boki[2]**2 or boki[2]**2-boki[0]**2 == boki[1]**2 or boki[2]**2-boki[1]**2 == boki[0]**2:
+def por(a,b,c):#funkcja pozwala sprawdzić czy trójkąt jest prostokątny, ostrokątny czy rozwartokątny
+    if a**2+b**2 == c**2 or c**2-a**2 == b**2 or c**2-b**2 == c**2:
         por = "prostokątny !!" 
         return por
     
-    elif  boki[2]**2 >= boki[0]**2 + boki[1]**2 or boki[2]**2 - boki[1]**2 >= boki[0]**2 or boki[2]**2 - boki[0]**2 >= boki[1]**2:
+    elif  c**2 >= a**2 + b**2 or c**2 - b**2 >= a**2 or c**2 - a**2 >= b**2:
         por = "ostrokątny !!"
         return por
     
-    elif  boki[2]**2 <= boki[0]**2 + boki[1]**2 or boki[2]**2 - boki[1]**2 <= boki[0]**2 or boki[2]**2 - boki[0]**2 <= boki[1]**2:
+    elif  c**2 <= a**2 + b**2 or c**2 - b**2 <= a**2 or c**2 - a**2 <= b**2:
         por = "rozwartokątny !!"
         return por
     
-print("Obwód tego trójkąta wynosi:",obwod(obwod))
-print("Pole tego trojkata wynosi:",pole(pole))
-print("Ten trójkąt jest " + rrr(rrr))
-print("Ten trójkąt jest " + por(por))
