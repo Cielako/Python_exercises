@@ -20,8 +20,7 @@ def sortuj(lista):
             j = j - 1#aktualizowanie wartości j o 1 mniejszą
         lista[j + 1] = klucz#przypisanie wartości o indeksie j+1 zmiennej klucz
     print(lista)
-    print("Czas mojej aplikacji zajął:",time.time()-czas)
-
+    print("\n\n"+"Czas mojej aplikacji zajął:",time.time()-czas)
 
 losuj(lista_100,100)
 losuj(lista_200,200)
