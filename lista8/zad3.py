@@ -51,10 +51,6 @@ for i in range(10):
             kontrolna = 10 - int(kontrolna)
             pesel += str(kontrolna)
    
-        
-        
-    print(pesel) 
-
     plik_Pesel = open(sciezka+"\PESEL.txt","a")
     plik_Pesel.write(pesel+"\n")
     plik_Pesel.close()    
