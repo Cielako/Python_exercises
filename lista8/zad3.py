@@ -36,9 +36,25 @@ for i in range(10):
         pesel += "0" + porzadkowa
     else:
         pesel += porzadkowa
-    kontrolna = str(randint(0,9))
-    pesel += kontrolna 
     
+    kontrolna = int(pesel[0])*1 + int(pesel[1])*3 + int(pesel[2])*7 + int(pesel[3])*9 + int(pesel[4])*1 + int(pesel[5])*3 + int(pesel[6])*7 + int(pesel[7])*9 + int(pesel[8])*1 + int(pesel[9])*3
+    kontrolna = str(kontrolna)
+
+    if len(kontrolna) == 2:
+        kontrolna = 10 - int(kontrolna[1])
+        pesel += str(kontrolna)
+    elif len(kontrolna) == 3:
+        kontrolna = int(kontrolna) % 10
+        if kontrolna == 0:
+            pesel += str(kontrolna)
+        else: 
+            kontrolna = 10 - int(kontrolna)
+            pesel += str(kontrolna)
+   
+        
+        
+    print(pesel) 
+
     plik_Pesel = open(sciezka+"\PESEL.txt","a")
     plik_Pesel.write(pesel+"\n")
     plik_Pesel.close()    
