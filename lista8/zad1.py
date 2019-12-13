@@ -37,7 +37,7 @@ today = date.today()
 zaszyfrowanyTekst=szyfruj(zdanie,slownik)
 katalog = input("Podaj ścieżkę katalogu do utworzenia zaszyfrowanego pliku: ")
 if os.path.isdir(katalog):
-    katalog+="\plik_zaszyfrowany%" + str(klucz) + "_%" + str(today.year) + "%" + str(today.month) + "%" + str(today.day) + ".txt"
+    katalog+="\plik_zaszyfrowany" + str(klucz) + "_" + str(today.year) + str(today.month) + str(today.day) + ".txt"
     try: 
         nowy = open(katalog,"w",encoding="utf-8")
         nowy.write(zaszyfrowanyTekst)
@@ -47,7 +47,7 @@ if os.path.isdir(katalog):
 else:
     try:
         os.mkdir(katalog)
-        katalog+="\plik_zaszyfrowany%" + str(klucz) + "_%" + str(today.year) + "%" + str(today.month) + "%" + str(today.day) + ".txt"
+        katalog+="\plik_zaszyfrowany" + str(klucz) + "_" + str(today.year) + str(today.month) + str(today.day) + ".txt"
         nowy = open(katalog,"w", encoding="utf-8")
         nowy.write(zaszyfrowanyTekst)
         nowy.close()

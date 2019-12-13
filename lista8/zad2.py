@@ -33,7 +33,7 @@ def zapisz():
     else:
         today = date.today()
         deszyfrowanyTekst = deszyfruj(tekst,slownik)
-        sciezkaFinal = sciezka + "\plik_deszyfrowany%" + str(klucz) + "_%" + str(today.year) + "%" + str(today.month) + "%" + str(today.day) + ".txt"
+        sciezkaFinal = sciezka + "\plik_deszyfrowany" + str(klucz) + "_" + str(today.year) + str(today.month) + str(today.day) + ".txt"
         try:
             nowy=open(sciezkaFinal,'w', encoding="utf-8")
             nowy.write(deszyfrowanyTekst)
@@ -50,11 +50,11 @@ except:
 else:
     for plik in pliki:
         if "plik_zaszyfrowany" in plik:
-            if plik[18:20] == "10":
-                klucz = int(plik[18:20])
+            if plik[17:19] == "10":
+                klucz = int(plik[17:19])
                 zapisz()
             else:
-                klucz = int(plik[18:19])
+                klucz = int(plik[17:18])
                 zapisz()
                    
                       
